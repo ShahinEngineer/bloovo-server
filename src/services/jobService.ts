@@ -10,8 +10,8 @@ interface IJonService {
 }
 
 class JobService implements IJonService {
-    async findAll(): Promise<jobDocument[]> {
-        return await jobModel.find();
+    async findAll(page = 0, limit = 10): Promise<jobDocument[]> {
+        return await jobModel.find({}, {}, { skip: limit * page, limit });
     }
 
     async findById(id: string): Promise<jobDocument | null> {
