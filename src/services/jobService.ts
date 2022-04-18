@@ -1,4 +1,4 @@
-import { jobDocument } from 'models';
+import { jobDocument } from '../models';
 import jobModel from '../models/jobModel';
 import mongodb from 'mongodb';
 

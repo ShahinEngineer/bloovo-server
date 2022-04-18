@@ -8,7 +8,7 @@ export default class dbConnect {
         mongoose
             .connect(this.dbrui)
             .then(() => console.log('MongoDB connection established successfully'))
-            .catch((e: mongoose.Error) => console.log(`MongoDB connection failed with error: ${e}`));
+            .catch((e: any) => console.log(`MongoDB connection failed with error: ${e}`));
     }
     static getInstance() {
         if (this._instance) {
