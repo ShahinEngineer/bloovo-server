@@ -35,6 +35,10 @@ class App {
         const apiRoutes = new ViRoutes();
         this.app.use('/api', apiRoutes.router);
         this.app.use(express.static(path.join(__dirname, "../bloovo-client")));
+
+        this.app.get('/', (req: express.Request, res: express.Response) => {
+            res.sendFile(path.join(__dirname, 'bloovo-client', '/index.html'));
+        });
     }
 
     public listen(){
