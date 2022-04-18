@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import ViRoutes from './controller/v1.routes';
 import { urlencoded } from 'body-parser';
+import path from 'path';
 
 class App {
 
@@ -33,6 +34,7 @@ class App {
     private initializeRoutes() {
         const apiRoutes = new ViRoutes();
         this.app.use('/api', apiRoutes.router);
+        this.app.use(express.static(__dirname + '/bloovo-client'));
     }
 
     public listen(){
