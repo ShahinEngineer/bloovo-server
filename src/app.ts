@@ -34,7 +34,7 @@ class App {
     private initializeRoutes() {
         const apiRoutes = new ViRoutes();
         this.app.use('/api', apiRoutes.router);
-        this.app.use(express.static(__dirname + '/bloovo-client'));
+        this.app.use(express.static(path.join(__dirname, "../bloovo-client")));
     }
 
     public listen(){
